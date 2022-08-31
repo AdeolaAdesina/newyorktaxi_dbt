@@ -1,0 +1,13 @@
+newyorktaxi_dbt: # this needs to match the profile in your dbt_project.yml file
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: C:\Users\HP\Documents\newyorktaxi\newyorktaxi-360815-49d7011f778a.json # replace this with the full path to your keyfile
+      project: newyorktaxi-360815 # Replace this with your project id
+      dataset: trips_data_all # Replace this with dbt_your_name, e.g. dbt_bilbo
+      threads: 1
+      timeout_seconds: 300
+      location: US
+      priority: interactive
